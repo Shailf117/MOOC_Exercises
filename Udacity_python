@@ -1,0 +1,111 @@
+import turtle
+
+def trial1(turtle,length):
+    
+    X= length
+    turtle.fillcolor("green")
+    turtle.fill(True)
+    i=0
+    turtle.right(0)
+    turtle.right(60)
+    while i<3:
+        turtle.forward(X)
+        turtle.right(120)
+        i=i+1
+    turtle.forward(2*X)
+    turtle.right(120)
+    turtle.forward(X)
+    turtle.right(0)
+    i=0
+    while i<3:
+        turtle.forward(X)
+        turtle.right(120)
+        i=i+1
+    turtle.right(-240)
+    turtle.forward(X)
+    turtle.right(120)
+    turtle.forward(X)
+    turtle.right(-60)
+    turtle.fill(False)
+    
+def trial2(turtle,length):
+    
+    X= length
+    turtle.fillcolor("blue")
+    turtle.fill(True)
+    i=0
+    
+    turtle.right(60)    
+    while i<3:
+        turtle.forward(X)
+        turtle.right(120)
+        i=i+1
+
+    turtle.forward(2*X)
+    turtle.right(120)
+    turtle.forward(X)
+    turtle.right(0)
+    i=0
+    while i<3:
+        turtle.forward(X)
+        turtle.right(120)
+        i=i+1
+    
+    turtle.right(-240)
+    turtle.forward(X)
+    turtle.fill(False)
+    turtle.pu()
+    turtle.right(120)
+    turtle.forward(X)
+    turtle.right(120)
+    turtle.forward(2*X)
+    turtle.pd()
+    
+    
+def Main ():
+    window = turtle.Screen()
+    window.bgcolor("white")
+    brad=turtle.Turtle()
+    brad.shape("turtle")
+    brad.pu()
+    brad.goto(-100.00,100.00)
+    brad.pd()
+    j=0
+    while j<27:
+        if (j%3==0 ):#j ==0 or j==3 or j==6 or j==9 or j==12 or j==15 or j==18 or j==21 or j==24 or j==27) :
+            trial1(brad,20)
+            print j
+        elif(j==2 or j==5 or j==8 or j==11 or j==14 or j==17 or j== 20 or j==23 or j==26 or j== 29):
+            #brad.forward(80)
+            trial2(brad,20)
+            brad.right(60)
+            brad.forward(40)
+            brad.right(60)
+            brad.forward(40)
+            brad.right(-60)
+            if (j==5 or j==14 or j== 23):
+                brad.backward(160)
+                brad.right(-60)
+                brad.forward(80)
+                brad.right(60)
+            if(j==8):
+                brad.forward(80)
+            if(j==17):
+                brad.backward(240)
+                brad.right(-60)
+                brad.forward(160)
+                brad.right(60)
+            print j
+            print "T2 second triangle"
+        else:
+            trial2(brad,20)
+            brad.right(-60)
+            print j
+            print "t2 first triangle"
+        j=j+1
+
+    brad.forward(300)
+    window.exitonclick()
+
+
+Main()
